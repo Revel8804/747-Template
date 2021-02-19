@@ -1,11 +1,8 @@
 function New-Livery {
-    if (Test-Path $livloc) {$goon = Read-Host -Prompt "Folder already exists, Overwrite? Y/N"}
-    if ($goon -eq "Y" -or $goon -eq "y" -or -not(Test-Path $livloc)) {
-        Remove-Item -Path $livloc -Force -Recurse
+    if (-not (Test-Path $livloc)) {
         New-Item -Path $livloc\SimObjects\Airplanes\Asobo_B747_8i_$airfold\MODEL.$airfold -ItemType Directory
         New-Item -Path $livloc\SimObjects\Airplanes\Asobo_B747_8i_$airfold\MODEL.AI_$airfold -ItemType Directory
         New-Item -Path $livloc\SimObjects\Airplanes\Asobo_B747_8i_$airfold\TEXTURE.$airfold -ItemType Directory
-        
     }
 }
 function Move-Files {
