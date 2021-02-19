@@ -7,6 +7,11 @@ You can learn more about Image Magick here https://chocolatey.org/packages/image
 You can learn more about Blender here https://chocolatey.org/packages/blender
 ********************************************************************************************************************
 
+This program is in the beginning stages. There are still alot of changes and cleanup that need to be made.
+But for the most part it works and the base is there.
+If this gains any interest from anyone I will continue to update. 
+If it doesnt then I wont.
+
 Great News I have received permission from HughesMDflyer4 to include the MSFSLayoutGenerator.
 You can learn all about it here https://github.com/HughesMDflyer4/MSFSLayoutGenerator
 
