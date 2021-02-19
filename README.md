@@ -6,6 +6,7 @@ You can learn more about Chocolatey here https://chocolatey.org/
 You can learn more about Image Magick here https://chocolatey.org/packages/imagemagick
 You can learn more about Blender here https://chocolatey.org/packages/blender
 ********************************************************************************************************************
+Im pretty sure I started with the most difficult plane.
 
 This program is in the beginning stages. There are still alot of changes and cleanup that need to be made.
 But for the most part it works and the base is there.
