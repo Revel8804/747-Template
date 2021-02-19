@@ -28,3 +28,8 @@ Clean up the blender file. Outside the fuselage parts are goofy.
 Satisfy curious of what it would take to add seats to the back.
 
 Thank you to HughesMDflyer4 for use of https://github.com/HughesMDflyer4/MSFSLayoutGenerator
+
+
+********************************************************************************************************************
+Started the Savage Cub at https://github.com/Revel8804/SavageCub-Template
+********************************************************************************************************************
