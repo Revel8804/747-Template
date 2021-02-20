@@ -51,7 +51,7 @@ function Update-AircraftConfig {
 }
 
 function Convert-ToDDS {
-    $convertfile = Get-ChildItem -Path $PSScriptRoot\texture -Include *.png -Recurse | Where-Object {$_.LastWriteTime -lt (get-date).AddMinutes(-2)}
+    $convertfile = Get-ChildItem -Path $PSScriptRoot\texture -Include *.png -Recurse | Where-Object {$_.LastWriteTime -gt (get-date).AddMonths(-1)}
     magick.exe mogrify -format DDS $convertfile
 }
 function Update-LayoutJson {
@@ -79,7 +79,11 @@ function Open-Blender {
 }
 
 function Expand-BlenderFile {
-    Expand-Archive $PSScriptRoot\747.zip -DestinationPath $PSScriptRoot
+    Expand-Archive "$PSScriptRoot\747.zip" -DestinationPath $PSScriptRoot -Force
+    $timechange = Get-ChildItem -recurse | Where-Object {! $_.PSIsContainer}
+    foreach ($item in $timechange) {
+        $item.LastWriteTime=("31 December 1999 23:59:47")
+    }
 }
 
 # Form boxes working on making it one box.
