@@ -116,3 +116,4 @@ Move-Files
 Update-ManifestJson
 Update-AircraftConfig
 Update-LayoutJson
+pause
