@@ -80,7 +80,7 @@ function Open-Blender {
 
 function Expand-BlenderFile {
     Expand-Archive "$PSScriptRoot\747.zip" -DestinationPath $PSScriptRoot -Force
-    $timechange = Get-ChildItem -recurse | Where-Object {! $_.PSIsContainer}
+    $timechange = Get-ChildItem -path $PSScriptRoot -recurse -ErrorAction SilentlyContinue | Where-Object {! $_.PSIsContainer}
     foreach ($item in $timechange) {
         $item.LastWriteTime=("31 December 1999 23:59:47")
     }
