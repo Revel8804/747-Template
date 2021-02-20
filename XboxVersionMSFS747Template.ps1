@@ -88,11 +88,11 @@ function Expand-BlenderFile {
 
 # Form boxes working on making it one box.
 [void][System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic')
-$name = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your persona name", "Persona", "duke8804")
-$airline = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline or livery name", "Airline", "Bankrupt Airlines")
-$atcid = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline ATC ID (Tail Number)", "ATC ID", "BKRPT88")
-$icao = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline ICAO name", "ICAO", "BKRPT")
-$flightnumber = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline flight number", "Flight Number", "88")
+$name = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your persona name", "Persona")
+$airline = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline or livery name", "Airline")
+$atcid = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline ATC ID (Tail Number)", "ATC ID")
+$icao = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline ICAO name", "ICAO")
+$flightnumber = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline flight number", "Flight Number")
 $airfold = $airline.replace(' ','')
 $app = Get-AppxPackage -Name Microsoft.FlightSimulator
 $appname = $app.PackageFamilyName
