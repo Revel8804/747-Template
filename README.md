@@ -29,6 +29,7 @@ Clean up the blender file. Outside the fuselage parts are goofy.
 Satisfy curious of what it would take to add seats to the back.
 
 Thank you to HughesMDflyer4 for use of https://github.com/HughesMDflyer4/MSFSLayoutGenerator
+<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 
 ********************************************************************************************************************
