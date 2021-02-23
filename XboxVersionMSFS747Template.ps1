@@ -1,6 +1,6 @@
 function New-Livery {
-    Write-Host "Making Folders"
     if (-not (Test-Path $livloc)) {
+        Write-Host "Making Folders"
         New-Item -Path $livloc\SimObjects\Airplanes\Asobo_B747_8i_$airfold\MODEL.$airfold -ItemType Directory
         New-Item -Path $livloc\SimObjects\Airplanes\Asobo_B747_8i_$airfold\MODEL.AI_$airfold -ItemType Directory
         New-Item -Path $livloc\SimObjects\Airplanes\Asobo_B747_8i_$airfold\TEXTURE.$airfold -ItemType Directory
@@ -93,20 +93,38 @@ function Expand-BlenderFile {
     }
 }
 
+function Get-SteamLoc {
+    Write-host "Future Use"
+    if (-not (Test-Path $steamloc)) {
+        Write-host "I have no clue where your stuff is."
+        EXIT
+    }
+}
+
+function Get-PackageLoc {
+    $app = Get-AppxPackage -Name Microsoft.FlightSimulator
+    $appname = $app.PackageFamilyName
+    $apploc = "$env:LOCALAPPDATA\Packages\$appname\"
+    if (-not (Test-Path $apploc)) {
+        Get-SteamLoc
+    }
+    $usercfgloc = "$apploc\LocalCache\UserCfg.opt"
+    $maybe = Get-Content $usercfgloc | Where-Object {$_ -match "[a-zA-Z]\:\\"}
+    $finally = $maybe.Split(" ")
+    $script:livloc = $finally[1].Replace('"',"") + "\Community" + "\$name-b7478i-livery-$airfold"
+}
+
 # Form boxes working on making it one box.
 [void][System.Reflection.Assembly]::LoadWithPartialName('Microsoft.VisualBasic')
-$name = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your persona name", "Persona")
-$airline = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline or livery name", "Airline")
-$atcid = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline ATC ID (Tail Number)", "ATC ID")
-$icao = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline ICAO name", "ICAO")
-$flightnumber = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline flight number", "Flight Number")
-$airfold = $airline.replace(' ','')
-$app = Get-AppxPackage -Name Microsoft.FlightSimulator
-$appname = $app.PackageFamilyName
-$apploc = "$env:LOCALAPPDATA\Packages\$appname\LocalCache\Packages\Community"
-$livloc = "$apploc\B747-8i-$airfold"
+$script:name = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your persona name", "Persona").toupper()
+$script:airline = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline or livery name", "Airline").toupper()
+$script:atcid = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline ATC ID (Tail Number)", "ATC ID").toupper()
+$script:icao = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline ICAO name", "ICAO").toupper()
+$script:flightnumber = [Microsoft.VisualBasic.Interaction]::InputBox("Enter your airline flight number", "Flight Number").toupper()
+$script:airfold = $airline.replace(' ','')
 
 # Run functions
+Get-PackageLoc
 Install-NeededPrograms
 Expand-BlenderFile
 Open-Blender
@@ -116,4 +134,3 @@ Move-Files
 Update-ManifestJson
 Update-AircraftConfig
 Update-LayoutJson
-pause
