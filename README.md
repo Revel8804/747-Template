@@ -1,6 +1,10 @@
 # 747-Template
 ********************************************************************************************************************
 ALERT
+This will change a registry value. 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem LongPathsEnabled to 1.
+Apparently Microsoft made long file paths a thing, but did not enable it.
+You can learn more about Long File Paths here https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation
 This will install Chocolatey, Image Magick, and Blender if it is not installed already.
 You can learn more about Chocolatey here https://chocolatey.org/
 You can learn more about Image Magick here https://chocolatey.org/packages/imagemagick
@@ -29,6 +33,7 @@ Clean up the blender file. Outside the fuselage parts are goofy.
 Satisfy curious of what it would take to add seats to the back.
 
 Thank you to HughesMDflyer4 for use of https://github.com/HughesMDflyer4/MSFSLayoutGenerator
+Thank you to bestdani for creating https://github.com/bestdani/msfs2blend. 
 <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 
