@@ -64,7 +64,13 @@ function Update-LayoutJson {
 }
 
 function Install-NeededPrograms {
-    Write-Host "Installing Programs"
+    Write-Host "Installing Programs and registry changes"
+    $long = Get-ItemPropertyValue -Path HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem -Name LongPathsEnabled
+    if ($long -eq "0") {
+        Write-Host "Enabling Long File Paths"
+        Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem -Name LongPathsEnabled -Value 1
+        $long = Get-ItemPropertyValue -Path HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem -Name LongPathsEnabled
+    }
     $imagemagick = $null -ne (Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* | Where-Object { $_.DisplayName -like "*ImageMagick*" })
     $blender = $null -ne (Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* | Where-Object { $_.DisplayName -like "*Blender*" })
     if (-not (Test-Path "C:\ProgramData\chocolatey\choco.exe")) {
