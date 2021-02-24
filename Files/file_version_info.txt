@@ -33,7 +33,7 @@ VSVersionInfo(
         [StringStruct(u'Comments', u'Base template for the 747 on Microsoft Flight Simulator (2020).'),
         StringStruct(u'CompanyName', u''),
         StringStruct(u'FileDescription', u'MSFS747Template'),
-        StringStruct(u'FileVersion', u'1.0.2.0'),
+        StringStruct(u'FileVersion', u'0.0.1.0'),
         StringStruct(u'InternalName', u'MSFS747Template'),
         StringStruct(u'LegalCopyright', u'© 2021 Revel Communications + Technology'),
         StringStruct(u'LegalTrademarks', u''),
