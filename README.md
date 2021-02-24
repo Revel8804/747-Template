@@ -38,5 +38,5 @@ Thank you to bestdani for creating https://github.com/bestdani/msfs2blend.
 
 
 ********************************************************************************************************************
-Started the Savage Cub at https://github.com/Revel8804/SavageCub-Template
+Savage Cub at https://github.com/Revel8804/SavageCub-Template
 ********************************************************************************************************************
