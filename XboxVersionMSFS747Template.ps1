@@ -88,6 +88,7 @@ function Open-Blender {
     Write-Host "Opening Blender"
     $blenderloc = Get-ChildItem -Path "C:\Program Files\Blender Foundation\" -Include blender.exe -File -Recurse -ErrorAction SilentlyContinue
     Start-Process -FilePath $blenderloc.FullName -ArgumentList $PSScriptRoot\747.blend
+    Write-Host "Waiting until you are complete with editing the files"
     Pause
 }
 
