@@ -87,7 +87,8 @@ function Install-NeededPrograms {
 function Open-Blender {
     Write-Host "Opening Blender"
     $blenderloc = Get-ChildItem -Path "C:\Program Files\Blender Foundation\" -Include blender.exe -File -Recurse -ErrorAction SilentlyContinue
-    Start-Process -Wait -FilePath $blenderloc.FullName -ArgumentList $PSScriptRoot\747.blend
+    Start-Process -FilePath $blenderloc.FullName -ArgumentList $PSScriptRoot\747.blend
+    Pause
 }
 
 function Expand-BlenderFile {
